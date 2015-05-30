@@ -1,0 +1,20 @@
+{
+  "name": "geo-localizacao",
+  "version": "1.0.0",
+  "description": "workshop de geo localizacao",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "geo",
+    "localizacao",
+    "localizacao"
+  ],
+  "author": "FelipeCaue",
+  "license": "ISC",
+  "dependencies": {
+    "mongodb": "^2.0.33",
+    "node-geocoder": "^2.21.0"
+  }
+}
