@@ -7,11 +7,10 @@ var MongoClient = require('mongodb').MongoClient
     ]
   ;
   var poly = [[10, 10], [95, 80], [110, 110], [120, 100], [130, 110]];
- 
+
 MongoClient.connect(url, function(err, db) {
-    'use strict';
    if(err) return console.dir(err)
- 
+
     db.collection('lugares').find({loc: {$within: {$box: poly}}}).toArray(function(err, docs) {
     if(err) return console.dir(err)
     return console.log(docs);

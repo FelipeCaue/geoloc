@@ -6,14 +6,13 @@ var MongoClient = require('mongodb').MongoClient
       , {name: "C Q Sabe", loc: [45, 45]}
     ]
   ;
- 
+
 MongoClient.connect(url, function(err, db) {
-    'use strict';
    if(err) return console.dir(err)
- 
+
   db.collection('lugares').insert(lugares, function(err, result) {
     if(err) return console.dir(err)
     return console.log('Lugares cadastrados: ', lugares);
   });
- 
+
 });

@@ -6,16 +6,15 @@ var MongoClient = require('mongodb').MongoClient
       , {name: "C Q Sabe", loc: [45, 45]}
     ]
   ;
- 
+
 MongoClient.connect(url, function(err, db) {
-    'use strict';
    if(err) return console.dir(err)
- 
+
   db.collection('lugares')
     .find({loc: {$near: [50,50], $maxDistance: 10}})
     .toArray(function(err, docs) {
     if(err) return console.dir(err)
     return console.log(docs);
   });
- 
+
 });

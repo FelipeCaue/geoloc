@@ -7,14 +7,13 @@ var MongoClient = require('mongodb').MongoClient
     ]
   ;
 var box = [[30, 30], [60, 60]];
- 
+
 MongoClient.connect(url, function(err, db) {
-    'use strict';
    if(err) return console.dir(err)
- 
+
   db.collection('lugares').find({loc: {$within: {$box: box}}}).toArray(function(err, docs) {
     if(err) return console.dir(err)
     return console.log(docs);
   });
- 
-}); 
+
+});
