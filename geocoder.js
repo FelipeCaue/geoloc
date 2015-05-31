@@ -11,7 +11,7 @@ var rl = readline.createInterface({
 rl.question("Qual é o endereço:", function(enderecos){
   var geocoder = require('node-geocoder')(geocoderProvider, httpsAdapter);
   geocoder.geocode({address: enderecos, country: 'Brazil'}, function(err, res) {
-    console.log(res);
+    //console.log(res);
 
 var MongoClient = require('mongodb').MongoClient
     ,url = 'mongodb://localhost:27017/geodb';
@@ -22,7 +22,7 @@ MongoClient.connect(url, function(err, db) {
 
   db.collection('enderecos').insert(res, function(err, result) {
     if(err) return console.dir(err)
-    return console.log('Lugares cadastrados: ', res);
+      return console.log('Lugar cadastrado: ', res);
      });
 
     });
